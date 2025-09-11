@@ -22,11 +22,11 @@ int leftRotate(int arr[], int n){
 
 int main(){
 
-    int n = 5;
-    int arr[5] = {1,2,3,4,5};
+    int n = 7;
+    int arr[7] = {4 ,5 ,6 ,7 ,1, 2 ,3 };
     leftRotate(arr,n);
     
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
     }
