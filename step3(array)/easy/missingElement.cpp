@@ -2,8 +2,6 @@
     EXAMPLE :  {1,2,4,5} n = 5  -> missing element : 3  
 */
 
-
-
 #include<iostream>
 using namespace std;
 
