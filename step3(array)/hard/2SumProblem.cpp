@@ -8,33 +8,35 @@ Note: You are not allowed to use the same element twice. Example: If the target 
 
     
 */
-#include<iostream>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-
-
-int twoSum(int arr[] , int n , int target){
-    
-    for (int i = 0; i < n; i++)
-    {
-       int x = arr[i];
-       int y = target - x;
-        for (int j = 0; j < n; j++)
-        {
-            if (j != i && arr[j] == y)
-            {
-                return 1;
-            } 
-        }      
+vector<int> twoSum(int arr[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {  
+            if (arr[i] + arr[j] == target) {
+                return {i, j};   
+            }
+        }
     }
+    return {-1, -1};  
+}
+int main() {
+    int arr[] = {2, 7, 11, 15};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int target = 9;
+
+    vector<int> result = twoSum(arr, n, target);
+
+    if (result[0] == -1) {
+        cout << "No such pair found" << endl;
+    } else {
+        cout << "Indices: " << result[0] << " and " << result[1] << endl;
+        cout << "Values: " << arr[result[0]] << " and " << arr[result[1]] << endl;
+    }
+
     return 0;
 }
 
-int main(){
-    int N = 5;
-    int arr[N] = {2,6,5,8,11};
-    int target = 14;
-    int temp = twoSum(arr,N,target);
-    cout << temp << endl ;
-}
     
